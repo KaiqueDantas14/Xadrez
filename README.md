@@ -14,17 +14,19 @@
   </li>
 </ul>
 <hr>
-<ul>
+
 <h2>Requisitos funcionais</h2>
+
+<ul>
 <ol>
-  <b>Entrada de Dados:</b> Os valores para o número de casas a serem movidas serão definidos diretamente no código através de variáveis ou constantes.
+ <b>1. Entrada de Dados:</b> Os valores para o número de casas a serem movidas serão definidos diretamente no código através de variáveis ou constantes.
 </ol>
   
 <ol>
-<b>Lógica de Movimentação:</b> Cada peça usa uma lógica de movimento específica: For, Do-While, While (Torre, Bispo, Rainha).
+<b>2. Lógica de Movimentação:</b> Cada peça usa uma lógica de movimento específica: For, Do-While, While (Torre, Bispo, Rainha).
 </ol>
 
 <ol>
-<b>Saída de Dados:</b> O programa deverá imprimir no console a direção do movimento a cada casa percorrida pela peça.
+<b>3. Saída de Dados:</b> O programa deverá imprimir no console a direção do movimento a cada casa percorrida pela peça.
 </ol>
 </ul>
