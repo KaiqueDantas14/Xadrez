@@ -1,3 +1,5 @@
+// nivel aventureiro
+// nesse nível irei adicionar a logica da movimentação do cavalo: O cavalo se movimenta duas casas e depois faz um movimento perpendicular, ou seja, se move duas vezes para frente e uma vez para o lado, o lado pode ser para a esquerda ou direita.
 #include <stdio.h>
 
 int main(){
@@ -5,7 +7,7 @@ int main(){
     printf("         Xadrez\n");
     printf("=========================\n");
 
-    int opcao, peca, movimentoBispo = 0, movimentoRainha = 0; // crianção das variaveis para movimento do bispo e da rainha
+    int opcao, peca, movimentoBispo = 0, movimentoRainha = 0;// crianção das variaveis para movimento do bispo e da rainha
     printf("Escolha uma opção: \n");
     printf("1. Jogar \n");
     printf("2. Regras \n");
@@ -20,6 +22,7 @@ int main(){
         printf("1. Torre\n");
         printf("2. Bispo\n");
         printf("3. Rainha\n");
+        printf("4. Cavalo\n");
         printf("> ");
         scanf("%d", &peca);
         switch (peca)
@@ -45,6 +48,20 @@ int main(){
                     movimentoRainha++;
                 } while (movimentoRainha < 8);
             break;
+        
+        case 4:
+                for(int x = 2; x > 0; x--){  // Laço externo para cima
+                    printf("Cima\n");
+
+                    for(int y = 1; y > 0; y--){  // Laço interno que só vai rodar uma vez no final das duas iterações do movimento vertical
+                     
+                        if(x == 1){ // Só imprime "Direita" após a última iteração do movimento para cima
+                            printf("Direita\n");
+                        }
+                    }
+                }
+                break;
+        
 
         default:
                 printf("Opção Invalida!"); // Caso o usuario digite outra opção
@@ -59,6 +76,7 @@ int main(){
         printf("Torre: Move-se em linha reta horizontalmente ou verticalmente.\n");
         printf("Bispo: Move-se na diagonal.\n");
         printf("Rainha: Move-se em todas as direções.\n"); 
+        printf("Cavalo: se move duas casas em uma direção (horizontal ou vertical) e depois uma casa perpendicularmente, formando um L.");
         break;
 
     case 3:
