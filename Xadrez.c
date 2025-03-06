@@ -1,13 +1,41 @@
-// nivel aventureiro
-// nesse nível irei adicionar a logica da movimentação do cavalo: O cavalo se movimenta duas casas e depois faz um movimento perpendicular, ou seja, se move duas vezes para frente e uma vez para o lado, o lado pode ser para a esquerda ou direita.
+/*Nivel Mestre
+Nesse nivel, alterei a logica das peças Torre, Bispo e Rainha, utilizando funções através da recursividade, assim melhorando a legibilidade e facilidade de entendimento do codigo*/
 #include <stdio.h>
+
+void movimentoTorre(int casasTorre){ //criando funções com a viariavel casas + nome da peça, para facilitar uma futura correção, se necessario.
+        if(casasTorre > 0){
+            printf("Direita\n"); 
+            movimentoTorre(casasTorre - 1); // reduzindo o numero de casas a serem movidas
+        }
+}
+
+void movimentoBispo(int casasBispo){
+    if(casasBispo > 0 ){
+       for(int cima = 0; cima < 3; cima++){
+         printf("Cima\n");
+            if(cima < 2){ // Garante que 'Direita' não seja impresso após o ultimo 'cima'
+                for(int direita = 0; direita < 1; direita++){
+                    printf("Direita\n");
+                }
+            }
+       }
+
+    }
+}
+
+void movimentoRainha(int casasRainha){
+    if(casasRainha > 0){
+        printf("Esquerda\n");
+        movimentoRainha(casasRainha - 1);
+    }
+}
 
 int main(){
     printf("=========================\n");
     printf("         Xadrez\n");
     printf("=========================\n");
 
-    int opcao, peca, movimentoBispo = 0, movimentoRainha = 0;// crianção das variaveis para movimento do bispo e da rainha
+    int opcao, peca;// crianção das variaveis para movimento do bispo e da rainha
     printf("Escolha uma opção: \n");
     printf("1. Jogar \n");
     printf("2. Regras \n");
@@ -29,27 +57,19 @@ int main(){
         {
         case 1:
             printf("A Torre se movimenta:\n");
-                for (int i = 0; i < 5; i++){ // usando for para simular o movimento da Torre
-                    printf("Direita\n");
-                }
+            movimentoTorre(5); // Chamando função para executar o movimento da torre
             break;
         case 2:
-            printf("O Bispo se movimenta:\n");
-                while(movimentoBispo < 5){ 
-                    printf("Cima, Direita\n");
-                    movimentoBispo++;
-                }
+            movimentoBispo(5);
             break;
 
         case 3:
             printf("A Rainha se movimenta:\n");
-                do{ // a Rainha de move ao menos uma vez para a esquerda, depois o while verifica a condição
-                    printf("Esquerda\n");
-                    movimentoRainha++;
-                } while (movimentoRainha < 8);
+            movimentoRainha(8);
             break;
         
         case 4:
+            printf("O Cavalo se movimenta:\n");
                 for(int x = 2; x > 0; x--){  // Laço externo para cima
                     printf("Cima\n");
 
