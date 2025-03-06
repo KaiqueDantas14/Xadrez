@@ -12,6 +12,10 @@
   <li>
       <b>Rainha:</b> Move-se em <i>todas as direções</i>.  
   </li>
+  
+  <li>
+      <b>Cavalo</b> se movimenta em <i>'L'</i>
+  </li>
 </ul>
 <hr>
 
